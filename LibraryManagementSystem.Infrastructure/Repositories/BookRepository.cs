@@ -28,7 +28,7 @@ namespace LibraryManagementSystem.Infrastructure.Repositories
             this.domainEventPublisher = domainEventPublisher;
         }
 
-        public async Task<IList<BookDto>> GetAllAsync(Params Params)
+        public async Task<IList<GetBookDto>> GetAllAsync(Params Params)
         {
             var query = await context.Books
                 .Include(c => c.BorrowingRecords)
@@ -57,7 +57,7 @@ namespace LibraryManagementSystem.Infrastructure.Repositories
             // paging
             query = query.Skip((Params.PageSize) * (Params.PageNumber - 1)).Take(Params.PageSize).ToList();
 
-            return mapper.Map<IList<BookDto>>(query);
+            return mapper.Map<IList<GetBookDto>>(query);
         }
 
         public async Task<bool> AddAsync(BookDto  dto)

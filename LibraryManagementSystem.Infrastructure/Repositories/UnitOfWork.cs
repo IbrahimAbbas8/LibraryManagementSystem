@@ -17,12 +17,18 @@ namespace LibraryManagementSystem.Infrastructure.Repositories
 
         public IBookRepository BookRepository { get; }
 
+        public IPatronRepository PatronRepository { get; }
+
+        public IBorrowingRepository BorrowingRepository { get; }
+
         public UnitOfWork(LibraryManagementSystemDbContext context, IMapper mapper, IDomainEventPublisher domainEventPublisher)
         {
             this.context = context;
             this.mapper = mapper;
             this.domainEventPublisher = domainEventPublisher;
             BookRepository = new BookRepository(context, mapper, domainEventPublisher);
+            PatronRepository = new PatronRepository(context, mapper);
+            BorrowingRepository = new BorrowingRepository(context);
         }
     }
 }

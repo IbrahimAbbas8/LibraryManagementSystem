@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.Core.Interfaces
 {
-    public interface IBookRepository : IGenericRepository<Book>
+    public interface IPatronRepository : IGenericRepository<Patron>
     {
-        Task<IList<GetBookDto>> GetAllAsync(Params Params);
-
-        Task<bool> AddAsync(BookDto entity);
+        Task<IList<GetPatronDto>> GetAllAsync(Params Params);
     }
 }

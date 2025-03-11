@@ -10,6 +10,8 @@ namespace LibraryManagementSystem.API.MappingProfiles
         public MappingBook()
         {
             CreateMap<Book, BookDto>().ReverseMap();
+            CreateMap<Book, GetBookDto>().ReverseMap();
+            CreateMap<Book, UpdateBookDto>().ReverseMap();
         }
     }
 }

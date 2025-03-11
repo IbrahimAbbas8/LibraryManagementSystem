@@ -21,6 +21,18 @@ namespace LibraryManagementSystem.Core.Dtos
 
         [Required(ErrorMessage = "ISBN required")]
         public string ISBN { get; set; } = null!;
-        public List<BorrowingRecordDto> BorrowingRecords { get; set; } = new List<BorrowingRecordDto>();
+      //  public List<BorrowingRecordDto> BorrowingRecords { get; set; } = new List<BorrowingRecordDto>();
+    }
+
+    public class GetBookDto : BookDto
+    {
+        public int Id { get; set; }
+
+        public bool IsBorrowed { get; set; }
+    }
+
+    public class UpdateBookDto : BookDto
+    {
+        public int Id { get; set; }
     }
 }

@@ -18,6 +18,8 @@ namespace LibraryManagementSystem.Core.Entities
 
         public string ISBN { get; set; } = null!;
 
+        public bool IsBorrowed { get; set; }
+
         public List<BorrowingRecord> BorrowingRecords { get; set;} = new List<BorrowingRecord>();
     }
 }

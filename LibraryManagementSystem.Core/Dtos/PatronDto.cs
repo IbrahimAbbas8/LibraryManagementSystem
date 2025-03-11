@@ -13,4 +13,13 @@ namespace LibraryManagementSystem.Core.Dtos
 
         public ContactInfoDto? ContactInfo { get; set; }
     }
+
+    public class GetPatronDto : PatronDto
+    {
+        public int Id { get; set; }
+    }
+
+    public class UpdatePatronDto : GetPatronDto
+    {
+    }
 }

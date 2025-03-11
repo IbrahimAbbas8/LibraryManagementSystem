@@ -9,5 +9,7 @@ namespace LibraryManagementSystem.Core.Interfaces
     public interface IUnitOfWork
     {
         IBookRepository BookRepository { get; }
+        IPatronRepository PatronRepository { get; }
+        IBorrowingRepository BorrowingRepository { get; }
     }
 }
